@@ -43,8 +43,19 @@
           <h4>Specs</h4>
           <blockquote>Shine: {{product.shine}}</blockquote>
         </div>
+        <!-- Review Tab's content -->
         <div ng-show="tab.isSet(3)">
-          <h4>Reviews</h4>
+          <!-- Product Reviews List -->
+          <ul>
+              <h4>Reviews</h4>
+              <li ng-repeat="reviews in product.reviews">
+                <blockquote>
+                  <strong>{{reviews.stars}} Stars</strong>
+                  {{reviews.body}}
+                  <cite class="clearfix">-{{reviews.author}}</cite>
+                </blockquote>
+              </li>
+            </ul>
         </div>
       </section>
     </div>
